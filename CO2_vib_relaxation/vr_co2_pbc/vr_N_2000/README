@@ -1,0 +1,13 @@
+# This simulation will generate xyz files for 2000 molecules under VSC, so please ensure your disk space is large enough...
+
+The initial geometries for this nonequilibrium simulation and data available for plotting can be obtained by
+
+tar -xvf data_all.tar.gz
+
+1. If you want to perform the simulation, after the extract files from the tarball, please run
+
+qsub submit_diabatical_exc_accordingly.sh
+
+2. Then, please output the C=O bond energy distribution for all thermal molecules using:
+
+python collect_all_data_vco.py Exc*/

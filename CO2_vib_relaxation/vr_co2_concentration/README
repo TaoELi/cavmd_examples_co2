@@ -1,0 +1,19 @@
+# This simulation relies on completing the CavMD simulations in ../co2_eq/ and ../try_VER/ folders
+# Upon finishing the current simualtions as shown below, we can plot the vibrational realxation rate versus molecualr concentration.
+
+- 1. perform equilibrium simulation by changing some CO2 molecules to the isotope form
+
+./prepare_initial_configs.sh
+
+- 2. perform nonequilibrium simulation by setting 10 CO2 molecules as hot molecules
+
+./prepare_vr_configs.sh
+
+- 3. We need obtain C=O bond energy dynamics of nonequilibrium simulation, and IR from equilibrium simulations
+
+cp ../try_VER/collect_all_data_vco.py .
+
+python collect_all_data_vco.py c_*/E0_*/ eq_c_*/E0_*/
+
+
+ 

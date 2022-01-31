@@ -1,0 +1,14 @@
+#
+# Pure liquid Ph-Me3
+#
+
+tolerance 5.0
+filetype xyz
+output init_raw_au.xyz
+
+structure co2_au.xyz
+  number 343
+  inside box 0. 0. 0. 53.557 53.557 53.557
+end structure
+
+

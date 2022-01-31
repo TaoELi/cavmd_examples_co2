@@ -1,0 +1,30 @@
+<simulation verbosity='high'>
+  <output prefix='minimize'>
+    <properties stride='300' filename='out'>  [ step, time{picosecond}, conserved{electronvolt}, temperature{kelvin}, kinetic_cv{electronvolt}, potential{electronvolt}] </properties>
+    <trajectory filename='xc' stride='300' format='xyz'> x_centroid{angstrom} </trajectory>
+  </output>
+  <total_steps>300</total_steps>
+  <prng>
+    <seed>31415</seed>
+  </prng>
+  <ffsocket name='lammps' mode='unix' pbc='False'>
+    <address>mesitylene-pimd.1</address>
+  </ffsocket>
+  <system>
+    <initialize nbeads='1'>
+      <file mode='xyz' units='atomic_unit'> init_raw_au.xyz </file>
+      <cell mode='manual' units='atomic_unit'>
+	[59.3158, 0, 0, 0, 59.3158, 0, 0, 0, 59.3158]
+      </cell>
+      <velocities mode='thermal' units='kelvin'> 300 </velocities>
+    </initialize>
+    <forces>
+      <force forcefield='lammps'> </force>
+    </forces>
+    <motion mode='minimize'>
+    </motion>
+    <ensemble>
+      <temperature units='kelvin'> 300 </temperature>
+    </ensemble>
+  </system>
+</simulation>

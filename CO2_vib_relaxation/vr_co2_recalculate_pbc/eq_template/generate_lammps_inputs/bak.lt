@@ -1,0 +1,25 @@
+# molecule_in_vacuum.lt
+# runs a single molecule in vacuum for 100 steps
+
+write_once("Data Boundary"){
+    0.0 53.557 xlo xhi
+    0.0 53.557 ylo yhi
+    0.0 53.557 zlo zhi
+}
+
+write_once("In Init"){
+# a variable named `cutoff` is required by GROMOS_54A7_ATB.lt
+variable cutoff equal 9.0 # Angstroms
+boundary p p p
+}
+
+# import the forcefield file
+import "GROMOS_54A7_ATB.lt"
+
+# import molecule building block file
+import "co2_topology.lt"
+
+# create many molecules
+
+co2 = new GROMOS_54A7_ATB/CO2 [343]
+

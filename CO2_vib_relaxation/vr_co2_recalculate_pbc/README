@@ -1,0 +1,60 @@
+# This bulky simulation studies the cavity effect versus the system size.
+# After finishing this job, we can plot cavity effect versus (i) Nhot and (ii) molecular system size
+
+1. prepare equilibrium configurations under different system sizes
+
+./prepare_eq_files.sh
+
+This command relies on:
+
+packmol [http://leandro.iqm.unicamp.br/m3g/packmol/home.shtml] and
+moltemplate.sh [https://www.moltemplate.org/]
+
+Please ensure these two commands can be normally operated in your system.
+
+2. submit equilibrium simualtions
+
+./submit_eq_files.sh
+
+3. prepare nonequilibrium simulations after the completion of step 2 (It may take more than a week...)
+
+./prepare_vr_files_Nhot_increase.sh
+
+This script prepares nonequilibrium geometries with different Nhot (Nsub=2160)
+
+./prepare_vr_files_Nhot_10.sh
+
+This script prepares nonequilibrium geometries with different Nsub (Nhot = 10)
+
+./prepare_vr_files_Nhot_ratio_10.sh
+
+This script prepares nonequilibrium geometries with different Nsub (Nhot/Nsub = 10/216 remains the same)
+
+4. submit the nonequilibrium simulations accordingly (it can take more than one week...)
+
+./submit_vr_files_Nhot_increase.sh
+
+./submit_vr_files_Nhot_10.sh
+
+./submit_vr_files_Nhot_ratio_10.sh
+
+5. After the finish of all simulations, please run 
+
+./capture_avg_data.sh
+
+to obtain all necessary output for plotting.
+
+
+One important info of this simulation is that, because here we simulate up to a large number of molecules (10^4), it is not a good idea to directly output xyz files and then do analysis.
+
+a. In equilibrium simulations, we only output *checkpoint files, which store the current configuration only and will be used in nonequilibrium simulations.
+
+b. In nonequilibrium simulations, we output (i) C=O bond energy per hot molecule and (ii) photonic coordinates in simu*.out.
+
+As shown in vr_template/input_traj.xml.bak, we output the following three info
+
+usr_defined_quantity{atomic_unit}, atom_x(648){angstrom}, atom_x(649){angstrom}
+
+Here, vr_template/usr_defined_function.py.bak defines how to calculate the C=O bond energy per hot molecule.
+
+atom_x(648) and atom_x(649) [index starting from 0] denotes the last two "atoms", which are the cavity photons polarized along x and y directions.

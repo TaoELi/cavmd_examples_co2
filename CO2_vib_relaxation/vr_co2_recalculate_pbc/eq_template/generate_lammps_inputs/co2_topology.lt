@@ -1,0 +1,20 @@
+GROMOS_54A7_ATB {
+    CO2 {
+        write("Data Atoms"){
+            $atom:C1     $mol:... @atom:../O    0.651200 -4.4246000000E-06  1.7961450000E-04 -0.0000000000E+00
+            $atom:O1     $mol:... @atom:../OM     -0.325600 -1.1691259846E+00 -8.8351400000E-05  0.0000000000E+00
+            $atom:O2     $mol:... @atom:../OM     -0.325600  1.1691276847E+00 -8.5814200000E-05  0.0000000000E+00
+        }
+        write("Data Bonds"){
+            $bond:b1      @bond:../g1   $atom:C1     $atom:O1     
+            $bond:b2      @bond:../g1   $atom:C1     $atom:O2     
+        }
+        write("Data Angles"){
+            $angle:a1      @angle:../g1    $atom:O1     $atom:C1     $atom:O2  
+        }
+        write("Data Dihedrals"){
+        }
+        write("Data Impropers"){
+        }
+    }
+}
