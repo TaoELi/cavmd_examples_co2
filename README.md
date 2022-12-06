@@ -4,7 +4,7 @@ All the necessary input or post-processing files for reproducing the following p
 
 **polariton_lifetime_vsc/**
 
-- Li, T. E.; Nitzan, A.; Subotnik, J. E. Polariton relaxation under vibrational strong coupling: Comparing cavity molecular dynamics simulations against Fermi's golden rule rate. [arXiv. 2021](https://https://arxiv.org/abs/2111.12770).
+- Li, T. E.; Nitzan, A.; Subotnik, J. E. Polariton relaxation under vibrational strong coupling: Comparing cavity molecular dynamics simulations against Fermi's golden rule rate. [J. Chem. Phys. 2022, 156 (13), 134106](https://doi.org/10.1063/5.0079784).
 
 **CO2_laserPolariton/**
 
@@ -12,7 +12,7 @@ All the necessary input or post-processing files for reproducing the following p
 
 **selective_excite_solute/**
 
-- Li, T. E.; Nitzan, A.; Subotnik, J. E. Energy-efficient pathway for selectively exciting solute molecules to high vibrational states via solvent vibration-polariton pumping. [arXiv. 2021](https://arxiv.org/abs/2104.15121).
+- Li, T. E.; Nitzan, A.; Subotnik, J. E. Energy-efficient pathway for selectively exciting solute molecules to high vibrational states via solvent vibration-polariton pumping. [Nat. Commun., 2022, 13, 4203](https://www.nature.com/articles/s41467-022-31703-8).
 
 **CO2_vib_relaxation/**
 
